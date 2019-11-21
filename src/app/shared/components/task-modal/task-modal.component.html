@@ -1,0 +1,143 @@
+<div class="row bg-white p-4">
+    <div class="col-auto d-flex flex-column flex-fill mr-5">
+        <h4>{{ name }}</h4>
+        <section class="mt-3">
+            <small class="text-muted text-uppercase">due date</small>
+            <div class="d-flex flex-row align-items-center">
+                <div class="custom-control custom-checkbox mr-1">
+                    <ng-container>
+                        <input [formControl]="compCtrl" type="checkbox" class="custom-control-input" id="cb-x" required>
+                        <label class="custom-control-label" for="cb-x"></label>
+                    </ng-container>
+                </div>
+                <ng-container>
+                    <input [formControl]="dueCtrl" type="hidden" ngbDatepicker #due="ngbDatepicker"
+                        [positionTarget]="duebtn">
+                    <button #duebtn type="button" class="btn btn-light btn-sm d-flex align-items-center"
+                        (click)="due.toggle()">
+                        <span class="mr-2">{{ $due | async | date: 'MMM dd, yyyy'}}</span>
+
+                        <span *ngIf="$completed | async else isdue"
+                            class="badge badge-success text-uppercase mr-1">complete</span>
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </button>
+                </ng-container>
+            </div>
+        </section>
+
+        <section class="mt-4">
+            <h5>Description</h5>
+            <textarea class="form-control" rows="3" placeholder="Add a detailed description"></textarea>
+            <div class="d-flex align-items-center mt-2">
+                <button class="btn btn-sm btn-success mr-2">
+                    Save
+                </button>
+                <button class="btn btn-sm btn-danger">
+                    Cancel
+                </button>
+            </div>
+        </section>
+
+        <section class="mt-4">
+            <h5>Comments</h5>
+            <form (submit)="addComment(commentCtrl.value)" [formGroup]="commentForm">
+                <textarea formControlName="comment" class="form-control" rows="3"
+                    placeholder="Add a detailed description"></textarea>
+                <div class="d-flex align-items-center mt-2">
+                    <button class="btn btn-sm btn-success mr-2">
+                        Save
+                    </button>
+                    <span class="flex-fill"></span>
+                    <button type="button" title="Attach file" class="btn btn-sm btn-light mr-2">
+                        <i class="material-icons">attach_file</i>
+                    </button>
+                    <button type="button" title="Tag member" class="btn btn-sm btn-light mr-2">
+                        <i class="material-icons">tag</i>
+                    </button>
+                    <button type="button" title="Emoji" class="btn btn-sm btn-light mr-2">
+                        <i class="material-icons">tag_faces</i>
+                    </button>
+                </div>
+            </form>
+        </section>
+        <section class="mt-3">
+            <div *ngFor="let c of comments; let f = first" [class.mt-3]="!f">
+                <small class="text-muted text-uppercase"> {{ c.time | date: 'MMM dd, yyyy hh:mm aa'}}</small>
+                <div class="card bg-white p-2 mt-2">
+                    {{c.message}}
+                </div>
+            </div>
+
+        </section>
+
+
+    </div>
+    <div class="col d-flex flex-column">
+        <section>
+            <div class="mb-2 d-flex flex-row align-items-center justify-content-between">
+                <small class="text-uppercase font-weight-bolder text-muted">Assigned to</small>
+
+            </div>
+            <a href="#" class="badge badge-light">@andreamaysacdalan</a>
+            <div class="mt-3">
+                <button title="Assign member"
+                    class="w-100 btn btn-light btn-sm text-uppercase  font-weight-bold text-left d-flex align-items-center text-muted">
+                    <i class="material-icons mr-2">person_outline</i> Assign member
+                </button>
+            </div>
+        </section>
+
+        <section class="mt-4">
+            <div class="mb-2 d-flex flex-row align-items-center justify-content-between">
+                <small class="text-uppercase font-weight-bolder text-muted">Labels</small>
+            </div>
+            <div class="d-flex align-items-center flex-wrap">
+                <app-task-label variant="badge-secondary">Priority - High</app-task-label>
+                <app-task-label variant="badge-danger">Bug</app-task-label>
+                <app-task-label variant="badge-warning">Important</app-task-label>
+            </div>
+            <div class="mt-3">
+                <button title="Add label"
+                    class="w-100 btn btn-light btn-sm text-uppercase font-weight-bold text-left d-flex align-items-center text-muted">
+                    <i class="material-icons mr-2">label_outline</i> Add label
+                </button>
+            </div>
+        </section>
+        <section class="mt-4">
+            <div class="mb-2 d-flex flex-row align-items-center justify-content-between">
+                <small class="text-uppercase font-weight-bolder text-muted">Actions</small>
+            </div>
+            <div>
+                <button title="Add label"
+                    class="w-100 btn btn-light btn-sm text-uppercase font-weight-bold text-left d-flex align-items-center text-muted">
+                    <i class="material-icons mr-2">attach_file</i> Attach file
+                </button>
+            </div>
+            <div class="mt-2">
+                <button title="Add label"
+                    class="w-100 btn btn-light btn-sm text-uppercase font-weight-bold text-left d-flex align-items-center text-muted">
+                    <i class="material-icons mr-2">access_time</i> Due date
+                </button>
+            </div>
+            <div class="mt-2">
+                <button title="Add label"
+                    class="w-100 btn btn-light btn-sm text-uppercase font-weight-bold text-left d-flex align-items-center text-muted">
+                    <i class="material-icons mr-2">content_copy</i> Copy
+                </button>
+            </div>
+            <div class="mt-2">
+                <button title="Add label"
+                    class="w-100 btn btn-light btn-sm text-uppercase font-weight-bold text-left d-flex align-items-center text-muted">
+                    <i class="material-icons mr-2">delete</i> Remove
+                </button>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+<ng-template #isdue>
+    <span *ngIf="($isdue | async)" class="badge badge-danger text-uppercase mr-1">due</span>
+</ng-template>

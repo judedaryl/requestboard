@@ -1,0 +1,27 @@
+<div class="card task-card bg-white p-3">
+    <div class="d-flex flex-column align-items-start">
+        <div class="d-flex flex-row align-items-start w-100">
+            <a class="btn-link font-weight-bold" href="#">Fix email issue</a>
+            <span class="flex-fill"></span>
+
+            <div ngbDropdown class="d-inline-block">
+                <ng-container>
+                    <button class="btn-sm btn" ngbDropdownToggle id="task_more" (click)="stopPropagation($event)">
+                        <i class="material-icons">more_horiz</i>
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="task_more" class="dropdown-menu dropdown-menu-right">
+                        <button ngbDropdownItem (click)="stopPropagation($event)">Copy</button>
+                        <button ngbDropdownItem (click)="stopPropagation($event)">Delete</button>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <small class="mt-1 text-muted">#101 opened by @andreasacdalan</small>
+        <!-- TAGS -->
+        <div class="d-flex align-items-center flex-wrap">
+            <app-task-label variant="badge-secondary">Priority - High</app-task-label>
+            <app-task-label variant="badge-danger">Bug</app-task-label>
+            <app-task-label variant="badge-warning">Important</app-task-label>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+@import "./theme.scss";
+@import "bootstrap/scss/bootstrap";
+$material-design-icons-font-directory-path: '~material-design-icons-iconfont/dist/fonts/';
+
+@import '~material-design-icons-iconfont/src/material-design-icons';
+html, body {
+    width: 100%;
+    height: 100%;
+}

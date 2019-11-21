@@ -1,0 +1,8 @@
+.task-card {
+    max-width: 300px;
+    min-width: 300px;
+    cursor: pointer;
+}
+.dropdown-toggle::after {
+    display:none;
+}

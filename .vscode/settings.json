@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        ".vscode": true,
+        "**/*.spec.ts": true,
+        "node_modules": true
+    }
+}

@@ -1,0 +1,44 @@
+<div class="d-flex flex-column bg-white h-100">
+    <div class="p-5">
+        <div class="d-flex align-items-center">
+            <div class="d-flex flex-column">
+                <h5 class="font-weight-bolder mb-1">Request Board</h5>
+                <small class="text-muted">Updated 5 hours ago</small>
+            </div>
+            <span class="flex-fill"></span>
+            <div class="form-group mb-0 mr-2">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search" />
+                    <div class="input-group-append">
+                        <i class="input-group-text material-icons">search</i>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-outline-secondary mr-2">
+                <span class="d-flex align-items-center"><i class="material-icons mr-1">add</i>Add Task</span>
+            </button>
+            <button class="btn btn-outline-secondary">
+                <span class="d-flex align-items-center"><i class="material-icons mr-1">menu</i>Menu</span>
+            </button>
+        </div>
+    </div>
+    <div class="flex-fill overflow-auto p-5 d-flex flex-row">
+        <div *ngFor="let r of rows" class="mr-3">
+            <div class="mb-3">
+                <app-task-card (click)="openModal()"></app-task-card>
+            </div>
+            <div class="mb-3">
+                <app-task-card (click)="openModal()"></app-task-card>
+            </div>
+            <div class="mb-3">
+                <app-task-card (click)="openModal()"></app-task-card>
+            </div>
+            <div class="mb-3">
+                <app-task-card (click)="openModal()"></app-task-card>
+            </div>
+            <div class="mb-3">
+                <app-task-card (click)="openModal()"></app-task-card>
+            </div>
+        </div>
+    </div>
+</div>

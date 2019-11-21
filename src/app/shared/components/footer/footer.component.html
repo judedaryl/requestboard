@@ -1,0 +1,13 @@
+<footer class="bg-light py-5">
+    <section class="container">
+        <div class="row">
+            <div class="col" *ngFor="let val of footerSections">
+
+                <h5>{{val.title}}</h5>
+                <div *ngFor="let link of val.links; let first" class="{{first ? 'mt-3' : ''}}">
+                    <a href="#" class="btn-link text-muted">{{link.title}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
