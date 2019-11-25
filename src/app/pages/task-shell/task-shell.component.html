@@ -22,23 +22,31 @@
             </button>
         </div>
     </div>
-    <div class="flex-fill overflow-auto p-5 d-flex flex-row">
+    <div class="flex-fill py-2 px-5 d-flex flex-row task-container overflow-x-auto" (pan)="onPan($event)">
         <div *ngFor="let r of rows" class="mr-3">
-            <div class="mb-3">
-                <app-task-card (click)="openModal()"></app-task-card>
-            </div>
-            <div class="mb-3">
-                <app-task-card (click)="openModal()"></app-task-card>
-            </div>
-            <div class="mb-3">
-                <app-task-card (click)="openModal()"></app-task-card>
-            </div>
-            <div class="mb-3">
-                <app-task-card (click)="openModal()"></app-task-card>
-            </div>
-            <div class="mb-3">
-                <app-task-card (click)="openModal()"></app-task-card>
-            </div>
+            <app-task-panel [title]="r">
+                <div class="mb-3">
+                    <app-task-card (click)="openModal()"></app-task-card>
+                </div>
+                <div class="mb-3">
+                    <app-task-card (click)="openModal()"></app-task-card>
+                </div>
+                <div class="mb-3">
+                    <app-task-card (click)="openModal()"></app-task-card>
+                </div>
+                <div class="mb-3">
+                    <app-task-card (click)="openModal()"></app-task-card>
+                </div>
+                <div class="mb-3">
+                    <app-task-card (click)="openModal()"></app-task-card>
+                </div>
+                <div class="mb-3">
+                    <app-task-card (click)="openModal()"></app-task-card>
+                </div>
+                <div class="mb-3">
+                    <app-task-card (click)="openModal()"></app-task-card>
+                </div>
+            </app-task-panel>
         </div>
     </div>
 </div>

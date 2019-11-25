@@ -2,6 +2,9 @@
     max-width: 300px;
     min-width: 300px;
     cursor: pointer;
+    &:hover {
+        background-color: rgba(0,0,0,0.02) !important;
+    }
 }
 .dropdown-toggle::after {
     display:none;

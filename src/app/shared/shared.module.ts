@@ -6,6 +6,8 @@ import { TaskLabelComponent } from './components/task-label/task-label.component
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TaskModalComponent } from './components/task-modal/task-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TaskPanelComponent } from './components/task-panel/task-panel.component';
+import { TaskContainerComponent } from './components/task-container/task-container.component';
 
 
 
@@ -14,7 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent, 
     TaskCardComponent, 
     TaskLabelComponent, 
-    TaskModalComponent
+    TaskModalComponent, TaskPanelComponent, TaskContainerComponent
   ],
   entryComponents: [
     TaskModalComponent
@@ -28,7 +30,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     TaskCardComponent,
     TaskLabelComponent,
-    TaskModalComponent
+    TaskModalComponent,
+    TaskPanelComponent,
+    TaskContainerComponent
   ]
 })
 export class SharedModule { }
