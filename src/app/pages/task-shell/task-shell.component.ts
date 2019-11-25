@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TaskModalComponent } from 'src/app/shared/components/task-modal/task-modal.component';
-
+import * as Hammer from 'hammerjs';
 @Component({
   selector: 'app-task-shell',
   templateUrl: './task-shell.component.html',
@@ -31,7 +31,7 @@ export class TaskShellComponent implements OnInit {
 
   onPan(ev: HammerInput) {
 
-    console.log(ev.additionalEvent);
+    console.log(ev);
   }
 
   openModal() {

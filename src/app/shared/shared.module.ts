@@ -8,6 +8,7 @@ import { TaskModalComponent } from './components/task-modal/task-modal.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { TaskPanelComponent } from './components/task-panel/task-panel.component';
 import { TaskContainerComponent } from './components/task-container/task-container.component';
+import { DropFileDirective } from './directives/drop-file.directive';
 
 
 
@@ -16,7 +17,7 @@ import { TaskContainerComponent } from './components/task-container/task-contain
     FooterComponent, 
     TaskCardComponent, 
     TaskLabelComponent, 
-    TaskModalComponent, TaskPanelComponent, TaskContainerComponent
+    TaskModalComponent, TaskPanelComponent, TaskContainerComponent, DropFileDirective
   ],
   entryComponents: [
     TaskModalComponent
@@ -32,7 +33,8 @@ import { TaskContainerComponent } from './components/task-container/task-contain
     TaskLabelComponent,
     TaskModalComponent,
     TaskPanelComponent,
-    TaskContainerComponent
+    TaskContainerComponent,
+    DropFileDirective
   ]
 })
 export class SharedModule { }

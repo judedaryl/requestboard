@@ -2,10 +2,29 @@
     min-width: 50px;
 }
 
+:host {
+    z-index: 999;
+}
+
 .drag-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: -1;
+    content: "Drag and drop files here";
+    background-color: rgba(0,0,0,0.5) !important;
+    &.active {
+        z-index: 100;
+    }
+
+    .h5 {
+        z-index: 99;
+    }
+}
+
+
+.active-overlay {
+    border: solid var(--yellow) 1px;
 }
